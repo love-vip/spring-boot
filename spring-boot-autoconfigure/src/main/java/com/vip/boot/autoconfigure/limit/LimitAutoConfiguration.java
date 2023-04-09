@@ -4,6 +4,7 @@ import com.vip.boot.autoconfigure.limit.executor.LimitExecutor;
 import com.vip.boot.autoconfigure.limit.executor.RedisLimitExecutor;
 import com.vip.boot.autoconfigure.limit.executor.RedissonLimitExecutor;
 import com.vip.boot.autoconfigure.redisson.RedissonAutoConfiguration;
+import jakarta.servlet.http.HttpServletRequest;
 import org.redisson.api.RedissonClient;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
@@ -21,8 +22,8 @@ public class LimitAutoConfiguration {
 
     @Bean
     @ConditionalOnBean(LimitExecutor.class)
-    public LimitInterceptor limitInterceptor(LimitExecutor limitExecutor) {
-        return new LimitInterceptor(limitExecutor);
+    public LimitInterceptor limitInterceptor(LimitExecutor limitExecutor, HttpServletRequest request) {
+        return new LimitInterceptor(limitExecutor, request);
     }
 
     @AutoConfiguration(after = {RedisAutoConfiguration.class})

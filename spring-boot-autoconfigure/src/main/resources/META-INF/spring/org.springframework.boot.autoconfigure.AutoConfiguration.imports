@@ -1,2 +1,3 @@
 com.vip.boot.autoconfigure.redisson.RedissonAutoConfiguration
 com.vip.boot.autoconfigure.limit.LimitAutoConfiguration
+com.vip.boot.autoconfigure.lock.LockAutoConfiguration

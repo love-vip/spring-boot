@@ -6,6 +6,7 @@ import org.springframework.context.annotation.ImportSelector;
 import org.springframework.core.GenericTypeResolver;
 import org.springframework.core.annotation.AnnotationAttributes;
 import org.springframework.core.type.AnnotationMetadata;
+import org.springframework.lang.NonNull;
 import org.springframework.lang.Nullable;
 import org.springframework.util.Assert;
 
@@ -21,8 +22,9 @@ public abstract class AbstractImportSelector<A extends Annotation> implements Im
 
     public static final String DEFAULT_LIMIT_MODE_ATTRIBUTE_NAME = "mode";
 
+    @NonNull
     @Override
-    public final String[] selectImports(AnnotationMetadata importingClassMetadata) {
+    public final String[] selectImports(@NonNull AnnotationMetadata importingClassMetadata) {
         Class<?> annType = GenericTypeResolver.resolveTypeArgument(getClass(), AbstractImportSelector.class);
         Assert.state(annType != null, "Unresolvable type argument for AdviceModeImportSelector");
 

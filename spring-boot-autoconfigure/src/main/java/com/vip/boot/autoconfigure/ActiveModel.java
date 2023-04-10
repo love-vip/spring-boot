@@ -6,5 +6,5 @@ package com.vip.boot.autoconfigure;
  * @date 2023/4/8 21:48
  */
 public enum ActiveModel {
-    REDIS, REDISSON, ZOOKEEPER;
+    LOCAL, REDIS, REDISSON, CURATOR;
 }

@@ -17,7 +17,7 @@ public class LimitImportSelector extends AbstractImportSelector<EnableLimit> {
         return switch (activeModel) {
             case REDIS -> new String[] {RedisLimitConfiguration.class.getName()};
             case REDISSON -> new String[] {RedissonAutoConfiguration.class.getName()};
-            case ZOOKEEPER -> new String[0];
+            case LOCAL, CURATOR -> new String[0];
         };
     }
 

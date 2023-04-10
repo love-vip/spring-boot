@@ -13,6 +13,7 @@
         <alibaba-easyexcel.version>3.1.1</alibaba-easyexcel.version>
         <redisson.version>3.20.1</redisson.version>
         <hutool.version>5.8.16</hutool.version>
+        <curator.version>5.4.0</curator.version>
     </properties>
 
     <dependencyManagement>
@@ -43,6 +44,13 @@
                 <groupId>org.redisson</groupId>
                 <artifactId>redisson-spring-data-30</artifactId>
                 <version>${redisson.version}</version>
+            </dependency>
+
+            <!-- zookeeper -->
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-recipes</artifactId>
+                <version>${curator.version}</version>
             </dependency>
 
             <!-- hutool -->

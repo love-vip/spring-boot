@@ -5,6 +5,7 @@ import org.springframework.aop.support.StaticMethodMatcherPointcut;
 import org.springframework.aop.support.annotation.AnnotationClassFilter;
 import org.springframework.aop.support.annotation.AnnotationMethodMatcher;
 import org.springframework.core.annotation.AnnotationUtils;
+import org.springframework.lang.NonNull;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.ReflectionUtils;
 
@@ -33,7 +34,7 @@ public class AnnotationClassOrMethodPointcut extends StaticMethodMatcherPointcut
     }
 
     @Override
-    public boolean matches(Method method, Class<?> targetClass) {
+    public boolean matches(@NonNull Method method, @NonNull Class<?> targetClass) {
         return getClassFilter().matches(targetClass) || this.methodResolver.matches(method, targetClass);
     }
 
@@ -63,7 +64,7 @@ public class AnnotationClassOrMethodPointcut extends StaticMethodMatcherPointcut
         }
 
         @Override
-        public boolean matches(Class<?> clazz) {
+        public boolean matches(@NonNull Class<?> clazz) {
             return super.matches(clazz) || this.methodResolver.hasAnnotatedMethods(clazz);
         }
 

@@ -1,6 +1,6 @@
 package com.vip.boot.autoconfigure.lock.executor;
 
-import com.vip.boot.autoconfigure.lock.annotation.LockType;
+import com.vip.boot.autoconfigure.support.enums.LockType;
 import com.vip.boot.autoconfigure.lock.exception.LockException;
 import lombok.RequiredArgsConstructor;
 import org.apache.curator.framework.CuratorFramework;

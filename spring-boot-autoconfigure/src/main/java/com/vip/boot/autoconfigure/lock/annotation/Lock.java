@@ -1,5 +1,7 @@
 package com.vip.boot.autoconfigure.lock.annotation;
 
+import com.vip.boot.autoconfigure.support.enums.LockType;
+
 import java.lang.annotation.*;
 
 /**

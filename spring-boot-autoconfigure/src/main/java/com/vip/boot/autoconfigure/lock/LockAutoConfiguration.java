@@ -1,5 +1,6 @@
 package com.vip.boot.autoconfigure.lock;
 
+import com.vip.boot.autoconfigure.curator.CuratorAutoConfiguration;
 import com.vip.boot.autoconfigure.lock.executor.CuratorLockExecutor;
 import com.vip.boot.autoconfigure.lock.executor.LocalLockExecutor;
 import com.vip.boot.autoconfigure.lock.executor.LockExecutor;
@@ -44,7 +45,7 @@ public class LockAutoConfiguration {
     }
 
     @ConditionalOnClass(CuratorFramework.class)
-    @AutoConfiguration
+    @AutoConfiguration(after = {CuratorAutoConfiguration.class})
     public static class CuratorLockConfiguration {
         @Bean
         @ConditionalOnBean(RedissonClient.class)

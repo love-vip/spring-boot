@@ -1,7 +1,7 @@
 package com.vip.boot.autoconfigure.lock.executor;
 
 import cn.hutool.core.lang.Assert;
-import com.vip.boot.autoconfigure.lock.annotation.LockType;
+import com.vip.boot.autoconfigure.support.enums.LockType;
 import com.vip.boot.autoconfigure.lock.exception.LockException;
 import com.vip.boot.autoconfigure.support.Pair;
 import org.springframework.beans.factory.annotation.Value;

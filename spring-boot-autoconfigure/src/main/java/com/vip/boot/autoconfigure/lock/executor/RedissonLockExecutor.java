@@ -1,6 +1,6 @@
 package com.vip.boot.autoconfigure.lock.executor;
 
-import com.vip.boot.autoconfigure.lock.annotation.LockType;
+import com.vip.boot.autoconfigure.support.enums.LockType;
 import lombok.RequiredArgsConstructor;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;

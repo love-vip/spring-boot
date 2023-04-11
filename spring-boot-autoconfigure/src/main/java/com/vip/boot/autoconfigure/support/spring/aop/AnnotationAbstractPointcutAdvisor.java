@@ -51,10 +51,11 @@ public abstract class AnnotationAbstractPointcutAdvisor<A extends Annotation> ex
     protected abstract Object invoke(MethodInvocation invocation, A annotation) throws Throwable;
 
     @Override
-    public boolean implementsInterface(Class<?> intf) {
+    public boolean implementsInterface(@NonNull Class<?> intf) {
         return annotationType != null && annotationType.isAssignableFrom(intf);
     }
 
+    @NonNull
     @Override
     public Advice getAdvice() {
         return this;

@@ -1,4 +1,4 @@
-package com.vip.boot.autoconfigure.lock.annotation;
+package com.vip.boot.autoconfigure.support.enums;
 
 /**
  * @author echo

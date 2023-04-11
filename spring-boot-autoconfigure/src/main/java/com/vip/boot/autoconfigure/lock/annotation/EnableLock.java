@@ -1,6 +1,7 @@
 package com.vip.boot.autoconfigure.lock.annotation;
 
 import com.vip.boot.autoconfigure.ActiveModel;
+import com.vip.boot.autoconfigure.lock.LockImportRegistrar;
 import com.vip.boot.autoconfigure.lock.LockImportSelector;
 import org.springframework.context.annotation.Import;
 import org.springframework.core.annotation.AliasFor;
@@ -16,7 +17,7 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Inherited
-@Import(LockImportSelector.class)
+@Import({LockImportSelector.class, LockImportRegistrar.class})
 public @interface EnableLock {
 
     ActiveModel type() default ActiveModel.REDISSON;

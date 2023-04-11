@@ -29,11 +29,7 @@ public abstract class AbstractImportSelector<A extends Annotation> implements Im
         Assert.state(annType != null, "Unresolvable type argument for AdviceModeImportSelector");
 
         AnnotationAttributes attributes = AnnotationConfigUtils.attributesFor(importingClassMetadata, annType);
-        if (attributes == null) {
-            throw new IllegalArgumentException(String.format(
-                    "@%s is not present on importing class '%s' as expected",
-                    annType.getSimpleName(), importingClassMetadata.getClassName()));
-        }
+        Assert.notNull(attributes, () -> String.format("@%s is not present on importing class '%s' as expected",annType.getSimpleName(), importingClassMetadata.getClassName()));
 
         ActiveModel activeModel = attributes.getEnum(DEFAULT_LIMIT_MODE_ATTRIBUTE_NAME);
         String[] imports = selectImports(activeModel);

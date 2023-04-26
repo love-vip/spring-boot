@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.aopalliance.intercept.MethodInvocation;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.Ordered;
 
 /**
  * @author echo
@@ -17,7 +18,7 @@ import org.springframework.beans.factory.annotation.Value;
  */
 @Slf4j
 @RequiredArgsConstructor
-public class LockInterceptor extends AnnotationAbstractPointcutTypeAdvisor<Lock> {
+public class LockInterceptor extends AnnotationAbstractPointcutTypeAdvisor<Lock> implements Ordered {
 
     /**
      * SpEL表达式解析器
@@ -45,6 +46,10 @@ public class LockInterceptor extends AnnotationAbstractPointcutTypeAdvisor<Lock>
                 lockExecutor.unlock();
             }
         }
+    }
 
+    @Override
+    public int getOrder() {
+        return 0;
     }
 }

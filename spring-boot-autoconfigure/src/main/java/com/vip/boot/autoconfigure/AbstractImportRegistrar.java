@@ -13,6 +13,7 @@ import org.springframework.util.Assert;
 
 import java.lang.annotation.Annotation;
 import java.util.LinkedHashSet;
+import java.util.Objects;
 
 /**
  * @author echo
@@ -40,7 +41,7 @@ public abstract class AbstractImportRegistrar<A extends Annotation> implements I
 
         //注册Bean
         for (BeanDefinition candidate : candidateComponents) {
-            registry.registerBeanDefinition(candidate.getBeanClassName(), candidate);
+            registry.registerBeanDefinition(Objects.requireNonNull(candidate.getBeanClassName()), candidate);
         }
     }
 }

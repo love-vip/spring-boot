@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.aopalliance.intercept.MethodInvocation;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.Ordered;
 
 /**
  * @author echo
@@ -19,7 +20,7 @@ import org.springframework.beans.factory.annotation.Value;
  */
 @Slf4j
 @RequiredArgsConstructor
-public class LimitInterceptor extends AnnotationAbstractPointcutTypeAdvisor<Limit> {
+public class LimitInterceptor extends AnnotationAbstractPointcutTypeAdvisor<Limit> implements Ordered {
 
     /**
      * SpEL表达式解析器
@@ -47,6 +48,11 @@ public class LimitInterceptor extends AnnotationAbstractPointcutTypeAdvisor<Limi
         } else {
             throw new LimitException("key=" + key + " is reach max limited access count=" + limit.rate() + " within period=" + limit.rateInterval() + " " + limit.rateIntervalUnit().name());
         }
+    }
+
+    @Override
+    public int getOrder() {
+        return 0;
     }
 
 }

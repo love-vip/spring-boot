@@ -18,7 +18,7 @@ import org.springframework.core.Ordered;
  */
 @Slf4j
 @RequiredArgsConstructor
-public class LockInterceptor extends AnnotationAbstractPointcutTypeAdvisor<Lock> implements Ordered {
+public class LockInterceptor extends AnnotationAbstractPointcutTypeAdvisor<Lock> {
 
     /**
      * SpEL表达式解析器
@@ -50,6 +50,6 @@ public class LockInterceptor extends AnnotationAbstractPointcutTypeAdvisor<Lock>
 
     @Override
     public int getOrder() {
-        return 0;
+        return Ordered.LOWEST_PRECEDENCE;
     }
 }

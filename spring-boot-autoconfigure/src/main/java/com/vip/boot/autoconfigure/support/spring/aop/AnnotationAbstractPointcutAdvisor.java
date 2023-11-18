@@ -37,7 +37,7 @@ public abstract class AnnotationAbstractPointcutAdvisor<A extends Annotation> ex
         if (annotation == null && invocation.getThis() != null) {
             annotation = AnnotationUtils.findAnnotation(invocation.getThis().getClass(), annotationType);
         }
-        return invoke(invocation, annotation);
+        return annotation == null ? invocation.proceed() : invoke(invocation, annotation);
     }
 
     /**

@@ -1,5 +1,7 @@
 package com.vip.boot.autoconfigure.limit.exception;
 
+import java.io.Serial;
+
 /**
  * @author echo
  * @version 1.0
@@ -7,6 +9,7 @@ package com.vip.boot.autoconfigure.limit.exception;
  */
 public class LimitException extends RuntimeException {
 
+    @Serial
     private static final long serialVersionUID = 5523106933655728813L;
 
     public LimitException() {

@@ -1,5 +1,7 @@
 package com.vip.boot.autoconfigure.lock.exception;
 
+import java.io.Serial;
+
 /**
  * @author echo
  * @version 1.0
@@ -7,6 +9,7 @@ package com.vip.boot.autoconfigure.lock.exception;
  */
 public class LockException extends RuntimeException {
 
+    @Serial
     private static final long serialVersionUID = -5563106933655728813L;
 
     public LockException() {

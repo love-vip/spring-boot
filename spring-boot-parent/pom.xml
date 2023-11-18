@@ -9,7 +9,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <spring-boot.version>3.0.5</spring-boot.version>
+        <spring-boot.version>3.1.5</spring-boot.version>
         <alibaba-easyexcel.version>3.1.1</alibaba-easyexcel.version>
         <redisson.version>3.20.1</redisson.version>
         <hutool.version>5.8.16</hutool.version>

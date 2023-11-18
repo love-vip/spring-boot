@@ -1,4 +1,5 @@
 com.vip.boot.autoconfigure.curator.CuratorAutoConfiguration
+com.vip.boot.autoconfigure.easyexcel.EasyExcelAutoConfiguration
 com.vip.boot.autoconfigure.limit.LimitAutoConfiguration
 com.vip.boot.autoconfigure.lock.LockAutoConfiguration
 com.vip.boot.autoconfigure.redisson.RedissonAutoConfiguration

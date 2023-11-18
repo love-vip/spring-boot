@@ -20,7 +20,7 @@ import org.springframework.core.Ordered;
  */
 @Slf4j
 @RequiredArgsConstructor
-public class LimitInterceptor extends AnnotationAbstractPointcutTypeAdvisor<Limit> implements Ordered {
+public class LimitInterceptor extends AnnotationAbstractPointcutTypeAdvisor<Limit> {
 
     /**
      * SpEL表达式解析器
@@ -52,7 +52,7 @@ public class LimitInterceptor extends AnnotationAbstractPointcutTypeAdvisor<Limi
 
     @Override
     public int getOrder() {
-        return 0;
+        return Ordered.LOWEST_PRECEDENCE;
     }
 
 }

@@ -13,10 +13,10 @@ import java.lang.annotation.*;
  * @version 1.0
  * @date 2023/4/9 22:16
  */
-@Target(ElementType.TYPE)
-@Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Inherited
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
 @Import({LockImportSelector.class, LockImportRegistrar.class})
 public @interface EnableLock {
 
